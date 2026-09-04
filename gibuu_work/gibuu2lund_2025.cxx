@@ -15,6 +15,7 @@ struct event {
     int nucleus_A=0;
     int nucleus_Z=0;        
     int    evType=0;
+    int nuc_charge=0;
     std::vector<double> *px=0;
     std::vector<double> *py=0;
     std::vector<double> *pz=0;
@@ -51,6 +52,8 @@ void gibuu2lund(int nevents) {
     tree->SetBranchAddress("lepOut_Py", &t.lepOut_Py);
     tree->SetBranchAddress("lepOut_Pz", &t.lepOut_Pz);
     tree->SetBranchAddress("evType", &t.evType);
+    tree->SetBranchAddress("nuc_charge", &t.nuc_charge);
+
 
     const float vx=0;
     const float vy=0;
@@ -70,7 +73,7 @@ void gibuu2lund(int nevents) {
         fprintf(output, "%i ", 0);
         fprintf(output, "%.4e ", 0.00051184);
         fprintf(output, "%.4e ", t.lepIn_E);        
-        fprintf(output, "%.4e ", 2212.0);
+        fprintf(output, "%i ", t.nuc_charge ? 2212 : 2112);
         fprintf(output, "%i ", t.evType);
         fprintf(output, "%.4e ", t.weight);
         fprintf(output, "\n");
