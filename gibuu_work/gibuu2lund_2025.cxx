@@ -71,7 +71,7 @@ void gibuu2lund(int nevents) {
         fprintf(output, "%i ", t.nucleus_Z);        
         fprintf(output, "%i ", 0);
         fprintf(output, "%i ", 0);
-        fprintf(output, "%.4e ", 0.00051184);
+        fprintf(output, "%.4e ", 0.000510999);
         fprintf(output, "%.4e ", t.lepIn_E);        
         fprintf(output, "%i ", t.nuc_charge ? 2212 : 2112);
         fprintf(output, "%i ", t.evType);
